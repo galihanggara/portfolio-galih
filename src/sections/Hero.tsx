@@ -260,32 +260,64 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Stats Bar */}
+      {/* Stats Bar — premium floating glass dock */}
       <div
         ref={statsRef}
-        className="absolute bottom-0 left-0 right-0 z-10 content-offset px-4 md:px-0 pb-16 md:pb-20"
-        style={{ opacity: 0 }}
+        className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-10 w-[92%] max-w-[1100px] select-none"
+        style={{
+          opacity: 0,
+          userSelect: 'none',
+          WebkitUserSelect: 'none',
+        }}
       >
-        <div className="flex flex-wrap gap-6 md:gap-10">
+        <div
+          className="flex flex-row items-center justify-around py-3 px-4 md:py-4 md:px-10 rounded-xl md:rounded-2xl select-none"
+          style={{
+            background: 'rgba(27, 67, 50, 0.45)', // matches --dark and --overlay
+            backdropFilter: 'blur(12px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(12px) saturate(140%)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25)',
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+          }}
+        >
           {CONFIG.stats.map((stat, i) => (
-            <div key={i} className="text-center md:text-left">
+            <div
+              key={i}
+              className="flex flex-col items-center text-center flex-1 select-none"
+              style={{
+                borderLeft: i > 0 ? '1px solid rgba(255, 255, 255, 0.15)' : 'none',
+                padding: '0 0.5rem',
+                userSelect: 'none',
+                WebkitUserSelect: 'none',
+              }}
+            >
               <div
-                className="font-display"
+                className="font-display select-none"
                 style={{
-                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-                  color: 'var(--white)',
-                  textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                  fontSize: 'clamp(1.1rem, 2.2vw, 2.2rem)',
+                  color: '#ffffff',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
+                  lineHeight: 1.1,
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
                 }}
               >
                 {stat.number}
               </div>
               <div
-                className="mt-1"
+                className="select-none"
                 style={{
                   fontFamily: 'var(--font-body)',
-                  fontSize: '11px',
-                  color: 'var(--white)',
-                  opacity: 0.7,
+                  fontSize: 'clamp(8px, 1.2vw, 10px)',
+                  color: 'rgba(255, 255, 255, 0.75)',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                  marginTop: '4px',
+                  lineHeight: 1.2,
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
                 }}
               >
                 {t(stat.labelEN, stat.labelID)}

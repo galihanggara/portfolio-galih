@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Disable default selection highlight on stats and decorative text */
+.select-none, .select-none * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Custom global text selection color overrides default browser blue */
+::selection {
+  background-color: rgba(45, 106, 79, 0.35) !important;
+  color: inherit !important;
+}
+::-moz-selection {
+  background-color: rgba(45, 106, 79, 0.35) !important;
+  color: inherit !important;
+}
+
 @layer base {
   :root {
     /* ===== DESIGN TOKENS ===== */
