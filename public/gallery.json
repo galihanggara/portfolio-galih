@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "image": "/gallery/photo-1.jpg",
+    "titleEN": "Mangrove Planting Site",
+    "titleID": "Lokasi Penanaman Mangrove",
+    "descEN": "Preparing the coastal zone for community-led mangrove seedling planting in North Sumatra.",
+    "descID": "Mempersiapkan zona pesisir untuk penanaman bibit mangrove berbasis masyarakat di Sumatera Utara."
+  },
+  {
+    "id": 2,
+    "image": "/gallery/photo-2.jpg",
+    "titleEN": "Drone Mapping Survey",
+    "titleID": "Survei Pemetaan Drone",
+    "descEN": "Operating UAV systems for aerial photogrammetry and high-resolution ecosystem mapping.",
+    "descID": "Mengoperasikan sistem UAV untuk fotogrametri udara dan pemetaan ekosistem resolusi tinggi."
+  },
+  {
+    "id": 3,
+    "image": "/gallery/photo-3.jpg",
+    "titleEN": "Ecosystem Health Monitoring",
+    "titleID": "Pemantauan Kesehatan Ekosistem",
+    "descEN": "Conducting field vegetation analysis and data collection on mangrove survival rates.",
+    "descID": "Melakukan analisis vegetasi lapangan dan pengumpulan data tentang tingkat kelangsungan hidup mangrove."
+  },
+  {
+    "id": 4,
+    "image": "/gallery/photo-4.jpg",
+    "titleEN": "Community Stakeholder Workshop",
+    "titleID": "Lokakarya Pemangku Kepentingan Masyarakat",
+    "descEN": "Coordinating with local village groups to plan sustainable coastal restoration activities.",
+    "descID": "Berkoordinasi dengan kelompok desa setempat untuk merencanakan kegiatan restorasi pesisir yang berkelanjutan."
+  },
+  {
+    "id": 5,
+    "image": "/gallery/photo-5.jpg",
+    "titleEN": "Seedling Nursery Management",
+    "titleID": "Pengelolaan Pesemaian Bibit",
+    "descEN": "Inspecting healthy mangrove seedlings in the nursery before field transplanting.",
+    "descID": "Memeriksa bibit mangrove yang sehat di pesemaian sebelum dipindahkan ke lapangan."
+  },
+  {
+    "id": 6,
+    "image": "/gallery/photo-6.jpg",
+    "titleEN": "Soil and Water Sampling",
+    "titleID": "Pengambilan Sampel Tanah dan Air",
+    "descEN": "Analyzing soil salinity and substrate quality to ensure optimal restoration success.",
+    "descID": "Menganalisis salinitas tanah dan kualitas substrat untuk memastikan keberhasilan restorasi yang optimal."
+  },
+  {
+    "id": 7,
+    "image": "/gallery/photo-7.jpg",
+    "titleEN": "Coastal Erosion Assessment",
+    "titleID": "Penilaian Erosi Pantai",
+    "descEN": "Mapping shoreline change and assessing vulnerable areas requiring wave barrier installation.",
+    "descID": "Petakan perubahan garis pantai dan menilai area rentan yang memerlukan pemasangan penghalang gelombang."
+  },
+  {
+    "id": 8,
+    "image": "/gallery/photo-8.jpg",
+    "titleEN": "Wildlife Habitat Observation",
+    "titleID": "Observasi Habitat Satwa Liar",
+    "descEN": "Monitoring biodiversity indicators, including bird species and benthic organisms.",
+    "descID": "Memantau indikator keanekaragaman hayati, termasuk spesies burung dan organisme bentik."
+  },
+  {
+    "id": 9,
+    "image": "/gallery/photo-9.jpg",
+    "titleEN": "Boundary Demarcation",
+    "titleID": "Demarkasi Batas Wilayah",
+    "descEN": "Collaborating with local authorities to establish conservation zone boundaries.",
+    "descID": "Berkolaborasi dengan pihak berwenang setempat untuk menetapkan batas zona konservasi."
+  },
+  {
+    "id": 10,
+    "image": "/gallery/photo-10.jpg",
+    "titleEN": "GIS Training for Youth",
+    "titleID": "Pelatihan GIS untuk Pemuda",
+    "descEN": "Empowering the local younger generation with basic mapping and environmental monitoring skills.",
+    "descID": "Memberdayakan generasi muda setempat dengan keterampilan pemetaan dasar dan pemantauan lingkungan."
+  }
+]

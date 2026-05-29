@@ -1,23 +1,43 @@
 import { useState, useEffect, useRef } from 'react';
-import { CONFIG } from '@/config';
 import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Gallery() {
   const { lang, t } = useLanguage();
+  const [galleryImages, setGalleryImages] = useState<{ id: number; image: string; titleEN: string; titleID: string; descEN: string; descID: string; }[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   
-  const totalImages = CONFIG.gallery.length;
+  const totalImages = galleryImages.length;
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Fetch gallery JSON at runtime
+  useEffect(() => {
+    fetch('/gallery.json')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setGalleryImages(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error loading gallery data:', err);
+        setLoading(false);
+      });
+  }, []);
 
   // Auto-play effect
   useEffect(() => {
-    if (!isPaused && lightboxIndex === null) {
-      autoPlayRef.current = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
-      }, 3000);
-    }
+    if (totalImages === 0 || isPaused || lightboxIndex !== null) return;
+
+    autoPlayRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
+    }, 3000);
 
     return () => {
       if (autoPlayRef.current) {
@@ -27,10 +47,12 @@ export default function Gallery() {
   }, [isPaused, totalImages, lightboxIndex]);
 
   const handlePrev = () => {
+    if (totalImages === 0) return;
     setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
   };
 
   const handleNext = () => {
+    if (totalImages === 0) return;
     setCurrentIndex((prev) => (prev + 1) % totalImages);
   };
 
@@ -40,6 +62,7 @@ export default function Gallery() {
 
   // Keyboard navigation for Lightbox
   useEffect(() => {
+    if (totalImages === 0) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
       if (e.key === 'Escape') setLightboxIndex(null);
@@ -54,6 +77,31 @@ export default function Gallery() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxIndex, totalImages]);
+
+  if (loading) {
+    return (
+      <section
+        id="gallery"
+        style={{
+          backgroundColor: 'var(--white)',
+          padding: '120px 0',
+        }}
+      >
+        <div className="content-offset">
+          <div className="max-w-[1100px] mx-auto flex flex-col items-center justify-center min-h-[350px]">
+            <div className="w-12 h-12 rounded-full border-4 border-[rgba(45,106,79,0.15)] border-t-[var(--mid)] animate-spin" />
+            <p className="mt-4 text-sm font-medium" style={{ fontFamily: 'var(--font-body)', color: 'var(--mid)' }}>
+              {t('Loading gallery...', 'Memuat galeri...')}
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (totalImages === 0) {
+    return null;
+  }
 
   return (
     <>
@@ -94,14 +142,14 @@ export default function Gallery() {
                   transform: `translateX(-${currentIndex * 100}%)`,
                 }}
               >
-                {CONFIG.gallery.map((image, index) => (
+                {galleryImages.map((image, index) => (
                   <div
-                    key={index}
+                    key={image.id || index}
                     className="relative w-full h-full flex-shrink-0 cursor-zoom-in"
                     onClick={() => setLightboxIndex(index)}
                   >
                     <img
-                      src={image.src}
+                      src={image.image}
                       alt={lang === 'en' ? image.titleEN : image.titleID}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
                       loading="lazy"
@@ -172,7 +220,7 @@ export default function Gallery() {
 
               {/* Dot Indicators */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
-                {CONFIG.gallery.map((_, index) => (
+                {galleryImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => handleDotClick(index)}
@@ -216,8 +264,8 @@ export default function Gallery() {
           >
             {/* Image */}
             <img
-              src={CONFIG.gallery[lightboxIndex].src}
-              alt={lang === 'en' ? CONFIG.gallery[lightboxIndex].titleEN : CONFIG.gallery[lightboxIndex].titleID}
+              src={galleryImages[lightboxIndex].image}
+              alt={lang === 'en' ? galleryImages[lightboxIndex].titleEN : galleryImages[lightboxIndex].titleID}
               className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl animate-lightboxScale"
             />
 
@@ -250,10 +298,10 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="font-heading text-xl md:text-2xl text-white">
-              {lang === 'en' ? CONFIG.gallery[lightboxIndex].titleEN : CONFIG.gallery[lightboxIndex].titleID}
+              {lang === 'en' ? galleryImages[lightboxIndex].titleEN : galleryImages[lightboxIndex].titleID}
             </h3>
             <p className="mt-2 text-xs md:text-sm text-white/70" style={{ fontFamily: 'var(--font-body)' }}>
-              {lang === 'en' ? CONFIG.gallery[lightboxIndex].descEN : CONFIG.gallery[lightboxIndex].descID}
+              {lang === 'en' ? galleryImages[lightboxIndex].descEN : galleryImages[lightboxIndex].descID}
             </p>
           </div>
         </div>
