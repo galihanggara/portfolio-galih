@@ -327,7 +327,7 @@ export const CONFIG: Config = {
       journal: "IOP Conference Series: Earth and Environmental Science",
       descEN: "Focuses on spatial analysis of land cover changes in mangrove and peatland ecosystems in North Sumatra, highlighting significant impacts of deforestation and land-use changes, and offering conservation and restoration insights.",
       descID: "Berfokus pada analisis spasial perubahan tutupan lahan di ekosistem mangrove dan gambut di Sumatera Utara, menyoroti dampak signifikan deforestasi dan perubahan penggunaan lahan, serta memberikan wawasan untuk strategi konservasi dan restorasi.",
-      link: "#" // UPDATE: ganti dengan URL jurnal asli
+      link: "/Suryanta_2024_IOP_Conf._Ser.__Earth_Environ._Sci._1352_012071.pdf" // UPDATE: ganti dengan URL jurnal asli
     }
   ],
 

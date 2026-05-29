@@ -18,7 +18,16 @@ export default function FixedSidebar() {
   const [isMobile, setIsMobile] = useState(false);
   const [open, setOpen] = useState(() => {
     const saved = localStorage.getItem('anchorSidebarOpen');
-    return saved !== null ? JSON.parse(saved) : true;
+    const isOpen = saved !== null ? JSON.parse(saved) : true;
+    // Set CSS variable immediately (before first paint) so content-offset is correct
+    const isMobileInit = typeof window !== 'undefined' && window.innerWidth < 768;
+    if (!isMobileInit) {
+      document.documentElement.style.setProperty(
+        '--sidebar-offset',
+        isOpen ? 'max(15vw, 120px)' : '0px'
+      );
+    }
+    return isOpen;
   });
 
   // Track isMobile

@@ -29,6 +29,9 @@
     --space-xxl: 180px;
     --space-sidebar: 15vw;
 
+    /* ===== SIDEBAR OFFSET (updated by JS on toggle) ===== */
+    --sidebar-offset: max(15vw, 120px);
+
     /* ===== SHADCN THEME ===== */
     --background: 0 0% 100%;
     --foreground: 0 0% 10%;
@@ -154,24 +157,18 @@
   }
 
   /* ===== CONTENT OFFSET FOR SIDEBAR ===== */
+  /* Base: mobile uses fixed padding */
   .content-offset {
-    padding-left: var(--sidebar-offset, max(15vw, 120px));
-    padding-right: 2rem;
-    transition: padding-left 0.5s ease-in-out;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
-  /* Desktop inner gutter so content doesn't hug the sidebar edge */
+  /* Desktop: sidebar width + 2rem inner gutter on each side */
   @media (min-width: 768px) {
     .content-offset {
-      padding-left: calc(var(--sidebar-offset, max(15vw, 120px)) + 2rem);
+      padding-left: calc(var(--sidebar-offset) + 2rem);
       padding-right: 2rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .content-offset {
-      padding-left: 24px;
-      padding-right: 24px;
+      transition: padding-left 0.5s ease-in-out;
     }
   }
 
