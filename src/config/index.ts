@@ -111,6 +111,14 @@ export interface TestimonialItem {
   quoteID: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  titleEN: string;
+  titleID: string;
+  descEN: string;
+  descID: string;
+}
+
 export interface ThemeColors {
   primary: string;
   secondary: string;
@@ -168,6 +176,9 @@ export interface Config {
 
   // ===== TESTIMONI =====
   testimonials: TestimonialItem[];
+
+  // ===== GALERI KEGIATAN =====
+  gallery: GalleryImage[];
 
   // ===== WARNA TEMA =====
   colors: ThemeColors;
@@ -316,7 +327,7 @@ export const CONFIG: Config = {
       journal: "IOP Conference Series: Earth and Environmental Science",
       descEN: "Focuses on spatial analysis of land cover changes in mangrove and peatland ecosystems in North Sumatra, highlighting significant impacts of deforestation and land-use changes, and offering conservation and restoration insights.",
       descID: "Berfokus pada analisis spasial perubahan tutupan lahan di ekosistem mangrove dan gambut di Sumatera Utara, menyoroti dampak signifikan deforestasi dan perubahan penggunaan lahan, serta memberikan wawasan untuk strategi konservasi dan restorasi.",
-      link: "#"
+      link: "#" // UPDATE: ganti dengan URL jurnal asli
     }
   ],
 
@@ -467,6 +478,80 @@ export const CONFIG: Config = {
       rating: 5,
       quoteEN: "Galih demonstrates high creativity and is able to synergize various disciplines to complete tasks efficiently. He is patient, adaptive, and systematic even under pressure. His direction is always clear and has real impact on team performance.",
       quoteID: "Galih menunjukkan kreativitas tinggi dan mampu mensinergikan berbagai ilmu untuk menyelesaikan tugas secara efisien. Ia sabar, adaptif, dan tetap runtut meski di bawah tekanan. Setiap arahan yang dilaksanakannya mudah dipahami dan berdampak nyata."
+    }
+  ],
+
+  // ===== GALERI KEGIATAN =====
+  gallery: [
+    {
+      src: "https://picsum.photos/id/10/1200/800",
+      titleEN: "Mangrove Planting Site",
+      titleID: "Lokasi Penanaman Mangrove",
+      descEN: "Preparing the coastal zone for community-led mangrove seedling planting in North Sumatra.",
+      descID: "Mempersiapkan zona pesisir untuk penanaman bibit mangrove berbasis masyarakat di Sumatera Utara."
+    },
+    {
+      src: "https://picsum.photos/id/15/1200/800",
+      titleEN: "Drone Mapping Survey",
+      titleID: "Survei Pemetaan Drone",
+      descEN: "Operating UAV systems for aerial photogrammetry and high-resolution ecosystem mapping.",
+      descID: "Mengoperasikan sistem UAV untuk fotogrametri udara dan pemetaan ekosistem resolusi tinggi."
+    },
+    {
+      src: "https://picsum.photos/id/28/1200/800",
+      titleEN: "Ecosystem Health Monitoring",
+      titleID: "Pemantauan Kesehatan Ekosistem",
+      descEN: "Conducting field vegetation analysis and data collection on mangrove survival rates.",
+      descID: "Melakukan analisis vegetasi lapangan dan pengumpulan data tentang tingkat kelangsungan hidup mangrove."
+    },
+    {
+      src: "https://picsum.photos/id/35/1200/800",
+      titleEN: "Community Stakeholder Workshop",
+      titleID: "Lokakarya Pemangku Kepentingan Masyarakat",
+      descEN: "Coordinating with local village groups to plan sustainable coastal restoration activities.",
+      descID: "Berkoordinasi dengan kelompok desa setempat untuk merencanakan kegiatan restorasi pesisir yang berkelanjutan."
+    },
+    {
+      src: "https://picsum.photos/id/48/1200/800",
+      titleEN: "Seedling Nursery Management",
+      titleID: "Pengelolaan Pesemaian Bibit",
+      descEN: "Inspecting healthy mangrove seedlings in the nursery before field transplanting.",
+      descID: "Memeriksa bibit mangrove yang sehat di pesemaian sebelum dipindahkan ke lapangan."
+    },
+    {
+      src: "https://picsum.photos/id/54/1200/800",
+      titleEN: "Soil and Water Sampling",
+      titleID: "Pengambilan Sampel Tanah dan Air",
+      descEN: "Analyzing soil salinity and substrate quality to ensure optimal restoration success.",
+      descID: "Menganalisis salinitas tanah dan kualitas substrat untuk memastikan keberhasilan restorasi yang optimal."
+    },
+    {
+      src: "https://picsum.photos/id/57/1200/800",
+      titleEN: "Coastal Erosion Assessment",
+      titleID: "Penilaian Erosi Pantai",
+      descEN: "Mapping shoreline change and assessing vulnerable areas requiring wave barrier installation.",
+      descID: "Petakan perubahan garis pantai dan menilai area rentan yang memerlukan pemasangan penghalang gelombang."
+    },
+    {
+      src: "https://picsum.photos/id/62/1200/800",
+      titleEN: "Wildlife Habitat Observation",
+      titleID: "Observasi Habitat Satwa Liar",
+      descEN: "Monitoring biodiversity indicators, including bird species and benthic organisms.",
+      descID: "Memantau indikator keanekaragaman hayati, termasuk spesies burung dan organisme bentik."
+    },
+    {
+      src: "https://picsum.photos/id/73/1200/800",
+      titleEN: "Boundary Demarcation",
+      titleID: "Demarkasi Batas Wilayah",
+      descEN: "Collaborating with local authorities to establish conservation zone boundaries.",
+      descID: "Berkolaborasi dengan pihak berwenang setempat untuk menetapkan batas zona konservasi."
+    },
+    {
+      src: "https://picsum.photos/id/104/1200/800",
+      titleEN: "GIS Training for Youth",
+      titleID: "Pelatihan GIS untuk Pemuda",
+      descEN: "Empowering the local younger generation with basic mapping and environmental monitoring skills.",
+      descID: "Memberdayakan generasi muda setempat dengan keterampilan pemetaan dasar dan pemantauan lingkungan."
     }
   ],
 

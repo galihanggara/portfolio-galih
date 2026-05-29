@@ -60,7 +60,7 @@ export default function Contact() {
         paddingBottom: '80px',
       }}
     >
-      <div className="content-offset px-4 md:px-0">
+      <div className="content-offset">
         <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-[55%_45%] gap-12 md:gap-16">
           {/* Left - Form */}
           <div>

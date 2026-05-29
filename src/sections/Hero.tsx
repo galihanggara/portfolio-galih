@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { CONFIG } from '@/config';
 import { useLanguage } from '@/hooks/useLanguage';
 
+
 export default function Hero() {
   const { lang, t } = useLanguage();
   const [typewriterText, setTypewriterText] = useState('');
@@ -113,6 +114,8 @@ export default function Hero() {
       className="relative w-full overflow-hidden"
       style={{ height: '100vh' }}
     >
+
+
       {/* Video Background */}
       <video
         autoPlay

@@ -33,7 +33,7 @@ export default function Publications() {
         padding: '80px 0',
       }}
     >
-      <div className="content-offset px-4 md:px-0">
+      <div className="content-offset">
         <div className="max-w-[800px] mx-auto">
           {/* Header */}
           <div className="section-label">{t('RESEARCH', 'PENELITIAN')}</div>

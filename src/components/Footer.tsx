@@ -26,7 +26,7 @@ export default function Footer() {
         padding: '32px 0',
       }}
     >
-      <div className="content-offset px-4 md:px-0">
+      <div className="content-offset">
         <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <span

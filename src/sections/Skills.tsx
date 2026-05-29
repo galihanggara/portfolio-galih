@@ -55,7 +55,7 @@ export default function Skills() {
         padding: '80px 0',
       }}
     >
-      <div className="content-offset px-4 md:px-0">
+      <div className="content-offset">
         <div className="max-w-[900px] mx-auto">
           {/* Header */}
           <div className="section-label">{t('EXPERTISE', 'KEAHLIAN')}</div>

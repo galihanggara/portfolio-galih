@@ -62,7 +62,7 @@ export default function About() {
         paddingBottom: '80px',
       }}
     >
-      <div className="content-offset px-4 md:px-0">
+      <div className="content-offset">
         <div
           className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-[55%_45%] gap-8 md:gap-16"
         >

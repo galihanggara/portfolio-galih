@@ -37,7 +37,7 @@ export default function Experience() {
         padding: '120px 0',
       }}
     >
-      <div className="content-offset px-4 md:px-0">
+      <div className="content-offset">
         <div className="max-w-[1100px] mx-auto">
           {/* Header */}
           <div className="section-label">{t('JOURNEY', 'PERJALANAN')}</div>

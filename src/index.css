@@ -155,7 +155,17 @@
 
   /* ===== CONTENT OFFSET FOR SIDEBAR ===== */
   .content-offset {
-    padding-left: max(15vw, 120px);
+    padding-left: var(--sidebar-offset, max(15vw, 120px));
+    padding-right: 2rem;
+    transition: padding-left 0.5s ease-in-out;
+  }
+
+  /* Desktop inner gutter so content doesn't hug the sidebar edge */
+  @media (min-width: 768px) {
+    .content-offset {
+      padding-left: calc(var(--sidebar-offset, max(15vw, 120px)) + 2rem);
+      padding-right: 2rem;
+    }
   }
 
   @media (max-width: 767px) {

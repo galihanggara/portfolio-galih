@@ -10,9 +10,9 @@ import Hero from '@/sections/Hero';
 import About from '@/sections/About';
 import Skills from '@/sections/Skills';
 import Portfolio from '@/sections/Portfolio';
+import Gallery from '@/sections/Gallery';
 import Experience from '@/sections/Experience';
 import Publications from '@/sections/Publications';
-import Services from '@/sections/Services';
 import Testimonials from '@/sections/Testimonials';
 import Contact from '@/sections/Contact';
 
@@ -54,14 +54,14 @@ function AppContent() {
         {/* Portfolio Section */}
         <Portfolio />
 
+        {/* Gallery Section */}
+        <Gallery />
+
         {/* Experience & Education Timeline */}
         <Experience />
 
         {/* Publications Section */}
         <Publications />
-
-        {/* Services Section */}
-        <Services />
 
         {/* Testimonials Section */}
         <Testimonials />

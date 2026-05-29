@@ -6,6 +6,7 @@ const sidebarItems = [
   { id: 'about', image: CONFIG.aboutPhoto, label: 'Profile' },
   { id: 'skills', image: '/images/project-2.jpg', label: 'GIS Analysis' },
   { id: 'portfolio', image: '/images/project-1.jpg', label: 'Restoration' },
+  { id: 'gallery', image: 'https://picsum.photos/id/10/100/100', label: 'Gallery' },
   { id: 'experience', image: '/images/project-3.jpg', label: 'Fieldwork' },
   { id: 'publications', image: '/images/project-4.jpg', label: 'Research' },
   { id: 'testimonials', image: '/images/project-6.jpg', label: 'Community' },
@@ -15,7 +16,12 @@ const sidebarItems = [
 export default function FixedSidebar() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [open, setOpen] = useState(() => {
+    const saved = localStorage.getItem('anchorSidebarOpen');
+    return saved !== null ? JSON.parse(saved) : true;
+  });
 
+  // Track isMobile
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -23,6 +29,17 @@ export default function FixedSidebar() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Sync open state with localStorage and CSS property
+  useEffect(() => {
+    localStorage.setItem('anchorSidebarOpen', JSON.stringify(open));
+    if (!isMobile) {
+      document.documentElement.style.setProperty('--sidebar-offset', open ? 'max(15vw, 120px)' : '0px');
+    } else {
+      document.documentElement.style.setProperty('--sidebar-offset', '0px');
+    }
+  }, [open, isMobile]);
+
+  // Observer to track current active section
   useEffect(() => {
     const sections = sidebarItems.map(({ id }) => document.getElementById(id)).filter(Boolean);
     if (sections.length === 0) return;
@@ -78,45 +95,83 @@ export default function FixedSidebar() {
     );
   }
 
-  // Desktop: left sidebar thumbnails
+  // Desktop: left sidebar thumbnails with dynamic toggle button
   return (
-    <div
-      className="fixed left-0 top-14 bottom-0 z-[100] hidden md:flex flex-col overflow-y-auto"
-      style={{
-        width: 'max(15vw, 120px)',
-        backgroundColor: 'var(--white)',
-        borderRight: '1px solid var(--border-light)',
-      }}
-    >
-      {sidebarItems.map((item, i) => (
-        <button
-          key={item.id}
-          onClick={() => scrollToSection(item.id)}
-          className={`sidebar-thumb flex flex-col items-start p-2 transition-all duration-300 ${
-            i === activeIndex ? 'active' : ''
-          }`}
-        >
-          <div className="w-full aspect-square overflow-hidden rounded-sm">
-            <img
-              src={item.image}
-              alt={item.label}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <span
-            className="sidebar-label mt-1 text-left transition-opacity duration-300"
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '10px',
-              color: 'var(--black)',
-              opacity: i === activeIndex ? 0.8 : 0.4,
-            }}
+    <>
+      {/* Sidebar Container */}
+      <div
+        className="fixed left-0 top-14 bottom-0 z-[100] hidden md:flex flex-col overflow-y-auto"
+        style={{
+          width: 'max(15vw, 120px)',
+          backgroundColor: 'var(--white)',
+          borderRight: '1px solid var(--border-light)',
+          transform: open ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.5s ease-in-out',
+        }}
+      >
+        {sidebarItems.map((item, i) => (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className={`sidebar-thumb flex flex-col items-start p-2 transition-all duration-300 ${
+              i === activeIndex ? 'active' : ''
+            }`}
           >
-            {item.label}
-          </span>
-        </button>
-      ))}
-    </div>
+            <div className="w-full aspect-square overflow-hidden rounded-sm">
+              <img
+                src={item.image}
+                alt={item.label}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <span
+              className="sidebar-label mt-1 text-left transition-opacity duration-300"
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '10px',
+                color: 'var(--black)',
+                opacity: i === activeIndex ? 0.8 : 0.4,
+              }}
+            >
+              {item.label}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      {/* Toggle Button */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="fixed top-1/2 -translate-y-1/2 z-[110] hidden md:flex items-center justify-center w-8 h-8 rounded-r-full shadow-md"
+        style={{
+          left: open ? 'max(15vw, 120px)' : '0px',
+          backgroundColor: 'var(--white)',
+          border: '1px solid var(--border-light)',
+          borderLeft: 'none',
+          color: 'var(--black)',
+          transition: 'left 0.5s ease-in-out, background-color 0.3s',
+        }}
+        aria-label={open ? 'Hide Sidebar' : 'Show Sidebar'}
+      >
+        {/* Chevron Icon (Left Chevron by default, rotated when closed) */}
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{
+            transform: open ? 'rotate(0deg)' : 'rotate(180deg)',
+            transition: 'transform 0.5s ease-in-out',
+          }}
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+    </>
   );
 }

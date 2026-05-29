@@ -12,6 +12,7 @@ const navLinks = [
   { id: 'about', labelEN: 'About', labelID: 'Tentang' },
   { id: 'skills', labelEN: 'Skills', labelID: 'Keahlian' },
   { id: 'portfolio', labelEN: 'Portfolio', labelID: 'Portofolio' },
+  { id: 'gallery', labelEN: 'Gallery', labelID: 'Galeri' },
   { id: 'experience', labelEN: 'Experience', labelID: 'Pengalaman' },
   { id: 'publications', labelEN: 'Publications', labelID: 'Publikasi' },
   { id: 'contact', labelEN: 'Contact', labelID: 'Kontak' },
