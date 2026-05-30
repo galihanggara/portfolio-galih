@@ -181,13 +181,8 @@ export const CONFIG: Config = {
 
   // Typewriter titles (bilingual, cycling)
   title: [
-    "GIS Assistant - PPIU North Sumatra",
-    "Asisten GIS - PPIU Sumatera Utara",
-    "Environmental & Conservation Professional",
-    "Profesional Lingkungan & Konservasi",
-    "Mangrove Rehabilitation Specialist",
-    "Spesialis Rehabilitasi Mangrove",
-    "Spatial Analysis & Drone Mapping Expert"
+    "Geospatial Analyst | Mangrove & Ecological Restoration Specialist",
+    "Geospatial Analyst | Mangrove & Ecological Restoration Specialist"
   ],
 
   taglineEN: "Leveraging spatial data and ecological expertise to drive sustainable landscape restoration across Indonesia.",
@@ -237,22 +232,14 @@ export const CONFIG: Config = {
   // ===== SKILLS =====
   skills: {
     technical: [
-      { name: "GIS & Spatial Analysis (ArcGIS, QGIS)", nameID: "GIS & Analisis Spasial (ArcGIS, QGIS)", percent: 90 },
-      { name: "Google Earth Engine", percent: 80 },
-      { name: "Drone Mapping & UAV Operation", nameID: "Pemetaan Drone & Operasi UAV", percent: 85 },
-      { name: "Remote Sensing & Land Cover Analysis", nameID: "Penginderaan Jauh & Analisis Tutupan Lahan", percent: 82 },
-      { name: "Ecosystem Rehabilitation Planning", nameID: "Perencanaan Rehabilitasi Ekosistem", percent: 88 },
-      { name: "Biodiversity Monitoring", nameID: "Monitoring Keanekaragaman Hayati", percent: 80 },
-      { name: "Scientific Writing & Reporting", nameID: "Penulisan Ilmiah & Pelaporan", percent: 85 }
+      { name: "Supervised & Unsupervised Classification", percent: 0 },
+      { name: "Time-Series Vegetation Indexing", percent: 0 },
+      { name: "UAV Photogrammetry & Orthomosaic", percent: 0 },
+      { name: "Geodatabase Architecture", percent: 0 },
+      { name: "Spatial Clustering", percent: 0 },
+      { name: "Drone SOP Implementation", percent: 0 }
     ],
-    tools: [
-      { name: "Microsoft Office Suite", percent: 95 },
-      { name: "ArcGIS Pro / ArcMap", percent: 88 },
-      { name: "QGIS", percent: 85 },
-      { name: "Google Earth Engine", percent: 78 },
-      { name: "DJI Drone Software", percent: 83 },
-      { name: "Camera Trap Analysis Tools", nameID: "Alat Analisis Kamera Jebak", percent: 75 }
-    ],
+    tools: [],
     soft: [
       { name: "Project Management", nameID: "Manajemen Proyek" },
       { name: "Community Engagement", nameID: "Pemberdayaan Masyarakat" },
@@ -337,8 +324,8 @@ export const CONFIG: Config = {
     {
       title: "Land Cover Spatial Analysis - North Sumatra",
       titleID: "Analisis Spasial Tutupan Lahan - Sumatera Utara",
-      description: "Spatial analysis of land cover changes in mangrove and peatland ecosystems, published in IOP Conference Series.",
-      descriptionID: "Analisis spasial perubahan tutupan lahan di ekosistem mangrove dan gambut, dipublikasikan di IOP Conference Series.",
+      description: "Engineered spatial monitoring protocols for a multi-hectare mangrove restoration program. Processed UAV and multispectral imagery to calculate carbon stock and guide community-based replanting interventions.",
+      descriptionID: "Engineered spatial monitoring protocols for a multi-hectare mangrove restoration program. Processed UAV and multispectral imagery to calculate carbon stock and guide community-based replanting interventions.",
       image: "/images/project-2.jpg",
       category: "gis",
       tags: ["ArcGIS", "Remote Sensing", "Land Cover", "Research", "Publication"],
@@ -348,8 +335,8 @@ export const CONFIG: Config = {
     {
       title: "Drone Ecosystem Mapping",
       titleID: "Pemetaan Ekosistem dengan Drone",
-      description: "Aerial drone surveys for ecosystem health assessment and rehabilitation progress monitoring across mangrove zones.",
-      descriptionID: "Survei drone udara untuk penilaian kesehatan ekosistem dan pemantauan kemajuan rehabilitasi di zona mangrove.",
+      description: "Authored and implemented Standard Operating Procedures (SOP) for UAV photogrammetry, standardizing aerial data acquisition for field teams and external vendors.",
+      descriptionID: "Authored and implemented Standard Operating Procedures (SOP) for UAV photogrammetry, standardizing aerial data acquisition for field teams and external vendors.",
       image: "/images/project-3.jpg",
       category: "mapping",
       tags: ["UAV", "Drone", "Ecosystem Mapping", "Monitoring"],
@@ -370,8 +357,8 @@ export const CONFIG: Config = {
     {
       title: "M4CR GIS Support - PPIU North Sumatra",
       titleID: "Dukungan GIS M4CR - PPIU Sumatera Utara",
-      description: "Ongoing GIS and spatial data support for the Mangroves for Coastal Resilience (M4CR) project in North Sumatra.",
-      descriptionID: "Dukungan GIS dan data spasial berkelanjutan untuk proyek Mangroves for Coastal Resilience (M4CR) di Sumatera Utara.",
+      description: "Architected and deployed Master Geodatabase v7 Platinum to standardize spatial data management across provincial restoration targets.",
+      descriptionID: "Architected and deployed Master Geodatabase v7 Platinum to standardize spatial data management across provincial restoration targets.",
       image: "/images/project-5.jpg",
       category: "gis",
       tags: ["GIS", "M4CR", "Coastal Resilience", "Spatial Data", "Mangrove"],

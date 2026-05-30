@@ -15,32 +15,13 @@ export default function Skills() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Animate progress bars
-      gsap.utils.toArray<HTMLElement>('.skill-progress-fill').forEach((fill) => {
-        const targetWidth = fill.dataset.percent;
-        gsap.to(fill, {
-          width: targetWidth + '%',
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: fill.closest('.skill-card'),
-            start: 'top 85%',
-            once: true,
-          },
-        });
-      });
-
-      // Stagger cards
-      gsap.from('.skill-card', {
-        y: 30, opacity: 0, duration: 0.6, stagger: 0.08,
-        scrollTrigger: { trigger: section, start: 'top 80%', once: true },
-      });
-
-      // Soft skill tags
+      // Stagger tags
       gsap.from('.soft-skill-tag', {
         y: 15, opacity: 0, duration: 0.4, stagger: 0.06,
-        scrollTrigger: { trigger: '.soft-skills-container', start: 'top 85%', once: true },
+        scrollTrigger: { trigger: section, start: 'top 85%', once: true },
       });
+
+
     }, section);
 
     return () => ctx.revert();
@@ -60,100 +41,21 @@ export default function Skills() {
           {/* Header */}
           <div className="section-label">{t('EXPERTISE', 'KEAHLIAN')}</div>
           <h2
-            className="font-display mt-4"
+            className="font-display mt-4 mb-8"
             style={{
               fontSize: 'clamp(2rem, 4vw, 3.5rem)',
               color: 'var(--black)',
             }}
           >
-            {t('Technical Proficiency', 'Keahlian Teknis')}
+            {t('Methodological Expertise', 'Keahlian Metodologis')}
           </h2>
 
-          {/* Technical Skills Grid */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Technical Skills Grid -> Tags */}
+          <div className="flex flex-wrap gap-3 mt-8">
             {CONFIG.skills.technical.map((skill, i) => (
-              <div
-                key={i}
-                className="skill-card rounded-sm p-6"
-                style={{ backgroundColor: 'var(--white)' }}
-              >
-                <h3
-                  className="font-heading"
-                  style={{
-                    fontSize: '16px',
-                    color: 'var(--black)',
-                  }}
-                >
-                  {lang === 'en' ? skill.name : (skill.nameID || skill.name)}
-                </h3>
-                <div className="skill-progress-track mt-3">
-                  <div
-                    className="skill-progress-fill"
-                    data-percent={skill.percent}
-                    style={{ width: '0%' }}
-                  />
-                </div>
-                <div className="mt-2 text-right">
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '11px',
-                      color: 'var(--mid)',
-                    }}
-                  >
-                    {skill.percent}%
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Tools Section */}
-          <h3
-            className="font-heading mt-12"
-            style={{
-              fontSize: '20px',
-              color: 'var(--black)',
-            }}
-          >
-            {t('Tools', 'Alat')}
-          </h3>
-
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CONFIG.skills.tools.map((tool, i) => (
-              <div
-                key={i}
-                className="skill-card rounded-sm p-6"
-                style={{ backgroundColor: 'var(--white)' }}
-              >
-                <h3
-                  className="font-heading"
-                  style={{
-                    fontSize: '16px',
-                    color: 'var(--black)',
-                  }}
-                >
-                  {lang === 'en' ? tool.name : (tool.nameID || tool.name)}
-                </h3>
-                <div className="skill-progress-track mt-3">
-                  <div
-                    className="skill-progress-fill"
-                    data-percent={tool.percent}
-                    style={{ width: '0%' }}
-                  />
-                </div>
-                <div className="mt-2 text-right">
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '11px',
-                      color: 'var(--mid)',
-                    }}
-                  >
-                    {tool.percent}%
-                  </span>
-                </div>
-              </div>
+              <span key={i} className="soft-skill-tag" style={{ backgroundColor: 'var(--white)', color: 'var(--black)', border: '1px solid var(--border-color)' }}>
+                {lang === 'en' ? skill.name : (skill.nameID || skill.name)}
+              </span>
             ))}
           </div>
 

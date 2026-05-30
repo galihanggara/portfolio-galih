@@ -169,26 +169,17 @@ export default function Portfolio() {
 
                     {/* Links */}
                     <div className="flex gap-4 mt-3">
-                      <span
-                        className="transition-all duration-200 hover:underline"
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '11px',
-                          color: 'var(--mid)',
-                        }}
-                      >
-                        {t('Live Demo', 'Demo')}
-                      </span>
-                      <span
-                        className="transition-all duration-200 hover:underline"
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '11px',
-                          color: 'var(--mid)',
-                        }}
-                      >
-                        GitHub
-                      </span>
+                      {(project.title === "Land Cover Spatial Analysis - North Sumatra" || project.titleID === "Analisis Spasial Tutupan Lahan - Sumatera Utara") && (
+                        <a 
+                          href="https://ee-galihanggara0.projects.earthengine.app/view/carbon-stock-mangrove" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="transition-all duration-200 hover:underline" 
+                          style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--mid)', fontWeight: 'bold' }}
+                        >
+                          View GEE App →
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
