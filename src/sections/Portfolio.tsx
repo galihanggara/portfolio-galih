@@ -169,7 +169,7 @@ export default function Portfolio() {
 
                     {/* Links */}
                     <div className="flex gap-4 mt-3">
-                      {(project.title === "Land Cover Spatial Analysis - North Sumatra" || project.titleID === "Analisis Spasial Tutupan Lahan - Sumatera Utara") && (
+                      {(project.title === "Mangrove Carbon Stock Dashboard (GEE)" || project.titleID === "Mangrove Carbon Stock Dashboard (GEE)") && (
                         <a 
                           href="https://ee-galihanggara0.projects.earthengine.app/view/carbon-stock-mangrove" 
                           target="_blank" 

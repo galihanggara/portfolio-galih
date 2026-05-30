@@ -10,22 +10,7 @@ export default function Skills() {
   const { lang, t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      // Stagger tags
-      gsap.from('.soft-skill-tag', {
-        y: 15, opacity: 0, duration: 0.4, stagger: 0.06,
-        scrollTrigger: { trigger: section, start: 'top 85%', once: true },
-      });
-
-
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
+  // Animations for tags removed to fix opacity/visibility issues
 
   return (
     <section
@@ -51,16 +36,27 @@ export default function Skills() {
           </h2>
 
           {/* Technical Skills Grid -> Tags */}
-          <div className="flex flex-wrap gap-3 mt-8">
-            {CONFIG.skills.technical.map((skill, i) => (
-              <span key={i} className="soft-skill-tag" style={{ backgroundColor: 'var(--white)', color: 'var(--black)', border: '1px solid var(--border-color)' }}>
-                {lang === 'en' ? skill.name : (skill.nameID || skill.name)}
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              "Supervised & Unsupervised Classification",
+              "Time-Series Vegetation Indexing",
+              "UAV Photogrammetry & Orthomosaic",
+              "Geodatabase Architecture",
+              "Spatial Clustering",
+              "Drone SOP Implementation"
+            ].map((skill, i) => (
+              <span 
+                key={`tech-${i}`} 
+                className="soft-skill-tag px-4 py-2 rounded-sm shadow-sm transition-all duration-300 hover:shadow-md opacity-100 visible z-10" 
+                style={{ backgroundColor: 'var(--white)', color: 'var(--black)', fontFamily: 'var(--font-body)', fontSize: '13px', border: '1px solid var(--border-color)' }}
+              >
+                {skill}
               </span>
             ))}
           </div>
 
           {/* Soft Skills */}
-          <div className="soft-skills-container mt-12">
+          <div className="soft-skills-container mt-16">
             <h3
               className="font-heading mb-4"
               style={{
@@ -72,7 +68,11 @@ export default function Skills() {
             </h3>
             <div className="flex flex-wrap gap-3">
               {CONFIG.skills.soft.map((skill, i) => (
-                <span key={i} className="soft-skill-tag">
+                <span 
+                  key={`soft-${i}`} 
+                  className="soft-skill-tag px-4 py-2 rounded-sm shadow-sm transition-all duration-300 hover:shadow-md opacity-100 visible z-10"
+                  style={{ backgroundColor: 'var(--white)', color: 'var(--black)', fontFamily: 'var(--font-body)', fontSize: '13px', border: '1px solid var(--border-color)' }}
+                >
                   {lang === 'en' ? skill.name : skill.nameID}
                 </span>
               ))}

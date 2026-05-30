@@ -189,12 +189,12 @@ export const CONFIG: Config = {
   taglineID: "Menggunakan data spasial dan keahlian ekologi untuk mendorong restorasi lanskap berkelanjutan di Indonesia.",
 
   bioEN: [
-    "I am a Forestry graduate (Magna Cum Laude) from Gadjah Mada University with a deep focus on conservation, GIS, and ecosystem rehabilitation. I have led and supervised large-scale mangrove restoration projects across North Sumatra and Riau under the Peatland and Mangrove Restoration Agency (BRGM).",
+    "I am a Forestry graduate from Gadjah Mada University with a deep focus on conservation, GIS, and ecosystem rehabilitation. I have led and supervised large-scale mangrove restoration projects across North Sumatra and Riau under the Peatland and Mangrove Restoration Agency (BRGM).",
     "Currently serving as GIS Assistant at PPIU North Sumatra under the M4CR Project (August 2025-present), I specialize in spatial analysis, drone mapping, ecosystem monitoring, and community-based rehabilitation planning. My work bridges scientific rigor with on-the-ground community engagement.",
     "I am passionate about evidence-based projects that advance ecological sustainability and social welfare - believing that spatial data and ecological approaches can transform the future of Indonesia's landscapes."
   ],
   bioID: [
-    "Saya adalah lulusan Kehutanan (Magna Cum Laude) dari Universitas Gadjah Mada dengan fokus pada konservasi, GIS, dan rehabilitasi ekosistem. Saya telah memimpin dan mengawasi proyek restorasi mangrove skala besar di Sumatera Utara dan Riau di bawah Badan Restorasi Gambut dan Mangrove (BRGM).",
+    "Saya adalah lulusan Kehutanan dari Universitas Gadjah Mada dengan fokus pada konservasi, GIS, dan rehabilitasi ekosistem. Saya telah memimpin dan mengawasi proyek restorasi mangrove skala besar di Sumatera Utara dan Riau di bawah Badan Restorasi Gambut dan Mangrove (BRGM).",
     "Saat ini bertugas sebagai GIS Assistant di PPIU Sumatera Utara dalam Project M4CR (Agustus 2025-sekarang), saya mengkhususkan diri pada analisis spasial, pemetaan drone, pemantauan ekosistem, dan perencanaan rehabilitasi berbasis masyarakat.",
     "Saya memiliki passion terhadap proyek berbasis bukti yang memajukan keberlanjutan ekologi dan kesejahteraan sosial - percaya bahwa data spasial dan pendekatan ekologi dapat mengubah masa depan lanskap Indonesia."
   ],
@@ -282,7 +282,7 @@ export const CONFIG: Config = {
       institution: "Universitas Gadjah Mada (Gadjah Mada University)",
       degree: "S.Hut. - Faculty of Forestry",
       degreeID: "S.Hut. - Fakultas Kehutanan",
-      honor: "Magna Cum Laude",
+      honor: "",
       descEN: "Specialized in forest resource management, biodiversity conservation, silviculture, ecosystem rehabilitation and restoration, and forestry policy & planning. Thesis: Feeding Tree Palatability of Helmeted Hornbill (Rhinoplax vigil).",
       descID: "Spesialisasi dalam pengelolaan sumber daya hutan, konservasi keanekaragaman hayati, silvikultur, rehabilitasi dan restorasi ekosistem, serta kebijakan dan perencanaan kehutanan. Skripsi: Palatabilitas Pohon Pakan Rangkong Gading (Rhinoplax vigil)."
     }
@@ -322,15 +322,15 @@ export const CONFIG: Config = {
       detail: "Managed and supervised mangrove rehabilitation across multiple sites. Used drone mapping for pre- and post-planting monitoring. Coordinated with local communities, NGOs, and government agencies."
     },
     {
-      title: "Land Cover Spatial Analysis - North Sumatra",
-      titleID: "Analisis Spasial Tutupan Lahan - Sumatera Utara",
-      description: "Engineered spatial monitoring protocols for a multi-hectare mangrove restoration program. Processed UAV and multispectral imagery to calculate carbon stock and guide community-based replanting interventions.",
-      descriptionID: "Engineered spatial monitoring protocols for a multi-hectare mangrove restoration program. Processed UAV and multispectral imagery to calculate carbon stock and guide community-based replanting interventions.",
-      image: "/images/project-2.jpg",
+      title: "Mangrove Carbon Stock Dashboard (GEE)",
+      titleID: "Mangrove Carbon Stock Dashboard (GEE)",
+      description: "Engineered an interactive, cloud-based Google Earth Engine (GEE) application to quantify mangrove carbon stock and CO2 equivalent. Processed Sentinel-2 multispectral imagery and GMW baselines to drive evidence-based restoration interventions.",
+      descriptionID: "Engineered an interactive, cloud-based Google Earth Engine (GEE) application to quantify mangrove carbon stock and CO2 equivalent. Processed Sentinel-2 multispectral imagery and GMW baselines to drive evidence-based restoration interventions.",
+      image: "/images/gee-dashboard-carbon.jpg",
       category: "gis",
-      tags: ["ArcGIS", "Remote Sensing", "Land Cover", "Research", "Publication"],
+      tags: ["Google Earth Engine", "Remote Sensing", "Carbon Stock", "JavaScript API"],
       demo: "#",
-      detail: "Conducted multi-temporal land cover analysis using satellite imagery and GIS tools. Results published in IOP Conference Series: Earth and Environmental Science (2024)."
+      detail: "Engineered an interactive, cloud-based Google Earth Engine (GEE) application to quantify mangrove carbon stock and CO2 equivalent. Processed Sentinel-2 multispectral imagery and GMW baselines to drive evidence-based restoration interventions."
     },
     {
       title: "Drone Ecosystem Mapping",
