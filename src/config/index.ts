@@ -185,18 +185,16 @@ export const CONFIG: Config = {
     "Geospatial Analyst | Mangrove & Ecological Restoration Specialist"
   ],
 
-  taglineEN: "Leveraging spatial data and ecological expertise to drive sustainable landscape restoration across Indonesia.",
-  taglineID: "Menggunakan data spasial dan keahlian ekologi untuk mendorong restorasi lanskap berkelanjutan di Indonesia.",
+  taglineEN: "Leveraging spatial data and ecological expertise to drive sustainable landscape restoration across tropical ecosystems.",
+  taglineID: "Menggunakan data spasial dan keahlian ekologi untuk mendorong restorasi lanskap berkelanjutan di ekosistem tropis.",
 
   bioEN: [
     "I am a Forestry graduate from Gadjah Mada University with a deep focus on conservation, GIS, and ecosystem rehabilitation. I have led and supervised large-scale mangrove restoration projects across North Sumatra and Riau under the Peatland and Mangrove Restoration Agency (BRGM).",
-    "Currently serving as GIS Assistant at PPIU North Sumatra under the M4CR Project (August 2025-present), I specialize in spatial analysis, drone mapping, ecosystem monitoring, and community-based rehabilitation planning. My work bridges scientific rigor with on-the-ground community engagement.",
-    "I am passionate about evidence-based projects that advance ecological sustainability and social welfare - believing that spatial data and ecological approaches can transform the future of Indonesia's landscapes."
+    "Currently supporting the M4CR Project at PPIU North Sumatra, I specialize in advanced spatial analysis, UAV mapping, and ecosystem monitoring. My work focuses on architecting robust geodatabases and bridging rigorous spatial science with community-based rehabilitation planning to transform tropical landscapes."
   ],
   bioID: [
     "Saya adalah lulusan Kehutanan dari Universitas Gadjah Mada dengan fokus pada konservasi, GIS, dan rehabilitasi ekosistem. Saya telah memimpin dan mengawasi proyek restorasi mangrove skala besar di Sumatera Utara dan Riau di bawah Badan Restorasi Gambut dan Mangrove (BRGM).",
-    "Saat ini bertugas sebagai GIS Assistant di PPIU Sumatera Utara dalam Project M4CR (Agustus 2025-sekarang), saya mengkhususkan diri pada analisis spasial, pemetaan drone, pemantauan ekosistem, dan perencanaan rehabilitasi berbasis masyarakat.",
-    "Saya memiliki passion terhadap proyek berbasis bukti yang memajukan keberlanjutan ekologi dan kesejahteraan sosial - percaya bahwa data spasial dan pendekatan ekologi dapat mengubah masa depan lanskap Indonesia."
+    "Saat ini mendukung Project M4CR di PPIU Sumatera Utara, saya mengkhususkan diri pada analisis spasial tingkat lanjut, pemetaan UAV, dan pemantauan ekosistem. Pekerjaan saya berfokus pada arsitektur geodatabase yang tangguh dan menjembatani ilmu spasial yang ketat dengan perencanaan rehabilitasi berbasis masyarakat untuk mentransformasi lanskap tropis."
   ],
 
   email: "galihanggara0@gmail.com",
@@ -223,9 +221,9 @@ export const CONFIG: Config = {
 
   // ===== STATISTIK HERO =====
   stats: [
-    { number: "3+", labelEN: "Years Experience", labelID: "Tahun Pengalaman" },
-    { number: "5+", labelEN: "Major Projects", labelID: "Proyek Besar" },
-    { number: "2", labelEN: "Organizations", labelID: "Instansi" },
+    { number: "15,000+", labelEN: "Hectares Rehabilitated", labelID: "Hektar Direhabilitasi" },
+    { number: "2", labelEN: "World Bank-Funded Projects", labelID: "Proyek Dana Bank Dunia" },
+    { number: "3", labelEN: "Provinces Covered", labelID: "Provinsi Tercakup" },
     { number: "1", labelEN: "Publication", labelID: "Publikasi Ilmiah" }
   ],
 
@@ -258,10 +256,10 @@ export const CONFIG: Config = {
       yearID: "Agustus 2025 - Sekarang",
       company: "PPIU North Sumatra - M4CR Project",
       companyID: "PPIU Sumatera Utara - Project M4CR",
-      position: "GIS Assistant",
-      positionID: "Asisten GIS",
-      descEN: "Supporting spatial data management and GIS analysis for the M4CR (Mangroves for Coastal Resilience) project in North Sumatra. Responsibilities include producing spatial maps, conducting land cover analysis, and supporting field monitoring activities.",
-      descID: "Mendukung manajemen data spasial dan analisis GIS untuk proyek M4CR (Mangroves for Coastal Resilience) di Sumatera Utara. Tanggung jawab mencakup produksi peta spasial, analisis tutupan lahan, dan dukungan kegiatan monitoring lapangan."
+      position: "GIS Assistant (Spatial Data & Analysis Lead)",
+      positionID: "Asisten GIS (Pimpinan Data Spasial & Analisis)",
+      descEN: "Spearheaded spatial data management and GIS architecture for the M4CR project. Formulated technical guidelines for field monitoring and executed advanced land cover analysis to drive evidence-based restoration strategies.",
+      descID: "Memimpin manajemen data spasial dan arsitektur GIS untuk proyek M4CR. Merumuskan panduan teknis untuk monitoring lapangan dan melaksanakan analisis tutupan lahan tingkat lanjut untuk mendorong strategi restorasi berbasis bukti."
     },
     {
       year: "2022 - Dec 2024",
@@ -302,8 +300,8 @@ export const CONFIG: Config = {
       titleEN: "Spatial Analysis of Land Cover Changes in Mangrove and Peatland Forests in North Sumatra, Indonesia",
       titleID: "Analisis Spasial Perubahan Tutupan Lahan di Hutan Mangrove dan Gambut di Sumatera Utara, Indonesia",
       journal: "IOP Conference Series: Earth and Environmental Science",
-      descEN: "Focuses on spatial analysis of land cover changes in mangrove and peatland ecosystems in North Sumatra, highlighting significant impacts of deforestation and land-use changes, and offering conservation and restoration insights.",
-      descID: "Berfokus pada analisis spasial perubahan tutupan lahan di ekosistem mangrove dan gambut di Sumatera Utara, menyoroti dampak signifikan deforestasi dan perubahan penggunaan lahan, serta memberikan wawasan untuk strategi konservasi dan restorasi.",
+      descEN: "Suryanta, et al., Anggara, G.W.S. (2024). Role: Executed time-series land cover classification (2012-2022) utilizing Landsat imagery to quantify mangrove reforestation (+12,801 ha) and deforestation metrics.",
+      descID: "Suryanta, dkk., Anggara, G.W.S. (2024). Peran: Melaksanakan klasifikasi tutupan lahan deret waktu (2012-2022) menggunakan citra Landsat untuk mengkuantifikasi reforestasi mangrove (+12.801 ha) dan metrik deforestasi.",
       link: "/Suryanta_2024_IOP_Conf._Ser.__Earth_Environ._Sci._1352_012071.pdf" // UPDATE: ganti dengan URL jurnal asli
     }
   ],
@@ -313,8 +311,8 @@ export const CONFIG: Config = {
     {
       title: "Mangrove Rehabilitation - North Sumatra & Riau",
       titleID: "Rehabilitasi Mangrove - Sumatera Utara & Riau",
-      description: "Large-scale mangrove restoration project covering coastal areas in North Sumatra and Riau, involving community-based planting and ecosystem monitoring.",
-      descriptionID: "Proyek restorasi mangrove skala besar mencakup kawasan pesisir Sumatera Utara dan Riau, melibatkan penanaman berbasis masyarakat dan pemantauan ekosistem.",
+      description: "Supervised rehabilitation planning maps using UAV orthophotos (3 cm GSD) and guided community-based planting interventions across thousands of hectares of degraded coastline.",
+      descriptionID: "Mengawasi peta perencanaan rehabilitasi menggunakan ortofoto UAV (3 cm GSD) dan memandu intervensi penanaman berbasis masyarakat di ribuan hektar garis pantai yang terdegradasi.",
       image: "/images/project-1.jpg",
       category: "rehabilitation",
       tags: ["Mangrove", "GIS", "Drone Mapping", "Community Engagement"],
