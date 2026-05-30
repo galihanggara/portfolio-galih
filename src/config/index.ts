@@ -326,7 +326,7 @@ export const CONFIG: Config = {
       titleID: "Mangrove Carbon Stock Dashboard (GEE)",
       description: "Engineered an interactive, cloud-based Google Earth Engine (GEE) application to quantify mangrove carbon stock and CO2 equivalent. Processed Sentinel-2 multispectral imagery and GMW baselines to drive evidence-based restoration interventions.",
       descriptionID: "Engineered an interactive, cloud-based Google Earth Engine (GEE) application to quantify mangrove carbon stock and CO2 equivalent. Processed Sentinel-2 multispectral imagery and GMW baselines to drive evidence-based restoration interventions.",
-      image: "/images/gee-dashboard-carbon.jpg",
+      image: "/images/gee-carbon-dashboard.jpg",
       category: "gis",
       tags: ["Google Earth Engine", "Remote Sensing", "Carbon Stock", "JavaScript API"],
       demo: "#",
