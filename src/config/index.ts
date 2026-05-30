@@ -11,7 +11,7 @@ export interface SocialLinks {
   whatsapp: string;
   linkedin: string;
   github: string;
-  instagram: string;
+  facebook: string;
 }
 
 export interface StatItem {
@@ -214,9 +214,9 @@ export const CONFIG: Config = {
   social: {
     email: "mailto:galihanggara0@gmail.com",
     whatsapp: "https://wa.me/6285345209335",
-    linkedin: "https://linkedin.com/in/galih-anggara",
-    github: "https://github.com/galih-anggara",
-    instagram: "https://instagram.com/galih_anggara"
+    linkedin: "https://www.linkedin.com/in/galih-anggara-gis",
+    github: "https://github.com/galihanggara",
+    facebook: "https://www.facebook.com/galihanggara0"
   },
 
   // ===== STATISTIK HERO =====

@@ -55,22 +55,68 @@ export default function Testimonials() {
       }}
     >
       <div className="content-offset">
-        <div className="max-w-[700px] mx-auto">
-          {/* Header */}
-          <div className="section-label">{t('TESTIMONIALS', 'TESTIMONI')}</div>
-          <h2
-            className="font-display mt-4"
-            style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              color: 'var(--black)',
-            }}
-          >
-            {t('What Colleagues Say', 'Apa Kata Rekan Kerja')}
-          </h2>
+        <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-16 items-center">
+          {/* Left Column - Header + Navigation */}
+          <div>
+            <div className="section-label">{t('TESTIMONIALS', 'TESTIMONI')}</div>
+            <h2
+              className="font-display mt-4"
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                color: 'var(--black)',
+              }}
+            >
+              {t('What Colleagues Say', 'Apa Kata Rekan Kerja')}
+            </h2>
 
-          {/* Testimonial Card */}
+            {/* Navigation Arrows */}
+            <div className="flex gap-3 mt-8">
+              <button
+                onClick={prevSlide}
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
+                style={{
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--black)',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--mid)';
+                  (e.currentTarget as HTMLElement).style.color = 'var(--white)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
+                  (e.currentTarget as HTMLElement).style.color = 'var(--black)';
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
+                style={{
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--black)',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--mid)';
+                  (e.currentTarget as HTMLElement).style.color = 'var(--white)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
+                  (e.currentTarget as HTMLElement).style.color = 'var(--black)';
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column - Testimonial Card */}
           <div
-            className="testimonial-card mt-12 rounded-sm p-8 md:p-10 relative"
+            className="testimonial-card rounded-sm p-8 md:p-10 relative"
             style={{ backgroundColor: 'var(--light)' }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -150,50 +196,6 @@ export default function Testimonials() {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex justify-center gap-3 mt-6">
-            <button
-              onClick={prevSlide}
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
-              style={{
-                border: '1px solid var(--border-color)',
-                color: 'var(--black)',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--mid)';
-                (e.currentTarget as HTMLElement).style.color = 'var(--white)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
-                (e.currentTarget as HTMLElement).style.color = 'var(--black)';
-              }}
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
-              style={{
-                border: '1px solid var(--border-color)',
-                color: 'var(--black)',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--mid)';
-                (e.currentTarget as HTMLElement).style.color = 'var(--white)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
-                (e.currentTarget as HTMLElement).style.color = 'var(--black)';
-              }}
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>

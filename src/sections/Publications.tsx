@@ -34,91 +34,96 @@ export default function Publications() {
       }}
     >
       <div className="content-offset">
-        <div className="max-w-[800px] mx-auto">
-          {/* Header */}
-          <div className="section-label">{t('RESEARCH', 'PENELITIAN')}</div>
-          <h2
-            className="font-display mt-4"
-            style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              color: 'var(--black)',
-            }}
-          >
-            {t('Publications', 'Publikasi')}
-          </h2>
-
-          {/* Publication Card */}
-          {CONFIG.publications.map((pub, i) => (
-            <div
-              key={i}
-              className="publication-card mt-8 p-6 md:p-8 rounded-sm"
+        <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-16 items-start">
+          {/* Left Column - Header (sticky) */}
+          <div className="sticky top-24">
+            <div className="section-label">{t('RESEARCH', 'PENELITIAN')}</div>
+            <h2
+              className="font-display mt-4"
               style={{
-                border: '1px solid var(--border-color)',
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                color: 'var(--black)',
               }}
             >
-              {/* Peer-Reviewed Badge */}
-              <span
-                className="inline-block px-2.5 py-1 rounded-sm"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '10px',
-                  backgroundColor: 'var(--mid)',
-                  color: 'var(--white)',
-                }}
-              >
-                PEER-REVIEWED
-              </span>
+              {t('Publications', 'Publikasi')}
+            </h2>
+          </div>
 
-              <h3
-                className="font-heading mt-4"
+          {/* Right Column - Publication Cards */}
+          <div>
+            {CONFIG.publications.map((pub, i) => (
+              <div
+                key={i}
+                className="publication-card p-6 md:p-8 rounded-sm"
                 style={{
-                  fontSize: '20px',
-                  color: 'var(--black)',
-                  lineHeight: 1.4,
+                  border: '1px solid var(--border-color)',
+                  marginTop: i > 0 ? '24px' : '0',
                 }}
               >
-                {lang === 'en' ? pub.titleEN : pub.titleID}
-              </h3>
+                {/* Peer-Reviewed Badge */}
+                <span
+                  className="inline-block px-2.5 py-1 rounded-sm"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '10px',
+                    backgroundColor: 'var(--mid)',
+                    color: 'var(--white)',
+                  }}
+                >
+                  PEER-REVIEWED
+                </span>
 
-              <p
-                className="mt-2"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '13px',
-                  color: 'var(--mid)',
-                }}
-              >
-                {pub.journal}, {pub.year}
-              </p>
+                <h3
+                  className="font-heading mt-4"
+                  style={{
+                    fontSize: '20px',
+                    color: 'var(--black)',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {lang === 'en' ? pub.titleEN : pub.titleID}
+                </h3>
 
-              <p
-                className="mt-3"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '13px',
-                  lineHeight: 1.6,
-                  color: 'var(--black)',
-                  opacity: 0.65,
-                }}
-              >
-                {lang === 'en' ? pub.descEN : pub.descID}
-              </p>
+                <p
+                  className="mt-2"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: 'var(--mid)',
+                  }}
+                >
+                  {pub.journal}, {pub.year}
+                </p>
 
-              <a
-                href={pub.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 transition-all duration-200 hover:underline"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '11px',
-                  color: 'var(--mid)',
-                }}
-              >
-                {t('View Publication', 'Lihat Publikasi')} →
-              </a>
-            </div>
-          ))}
+                <p
+                  className="mt-3"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    lineHeight: 1.6,
+                    color: 'var(--black)',
+                    opacity: 0.65,
+                  }}
+                >
+                  {lang === 'en' ? pub.descEN : pub.descID}
+                </p>
+
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 transition-all duration-200 hover:underline"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '11px',
+                    color: 'var(--mid)',
+                  }}
+                >
+                  {t('View Publication', 'Lihat Publikasi')} →
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
